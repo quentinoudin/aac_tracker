@@ -1,0 +1,39 @@
+@import "tailwindcss";
+
+@theme {
+  --font-sans: 'Inter', system-ui, sans-serif;
+  --color-slate-900: #0f172a;
+}
+
+@layer base {
+  :root {
+    --bg: #ffffff;
+    --text: #0f172a;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --bg: #0f172a;
+      --text: #f8fafc;
+    }
+  }
+
+  body {
+    background-color: #000; /* Dark background outside the app */
+    color: var(--text);
+    margin: 0;
+    font-family: var(--font-sans);
+    -webkit-font-smoothing: antialiased;
+  }
+  
+  /* Mobile-first app container centered on desktop */
+  #root {
+    max-width: 480px;
+    margin: 0 auto;
+    min-height: 100svh;
+    background-color: var(--bg);
+    position: relative;
+    box-shadow: 0 0 20px rgba(0,0,0,0.5);
+    display: flex;
+    flex-direction: column;
+  }
+}
